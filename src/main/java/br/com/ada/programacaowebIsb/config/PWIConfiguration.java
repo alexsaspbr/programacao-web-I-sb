@@ -1,6 +1,6 @@
 package br.com.ada.programacaowebIsb.config;
 
-import br.com.ada.programacaowebIsb.model.Carro;
+import br.com.ada.programacaowebIsb.model.Veiculo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 public class PWIConfiguration {
 
     @Bean
-    public Carro getCarro() {
-        return new Carro();
+    public Veiculo getCarro() {
+        return new Veiculo();
     }
 
 }
