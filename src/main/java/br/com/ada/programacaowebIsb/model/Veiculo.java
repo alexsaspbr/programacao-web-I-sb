@@ -1,14 +1,13 @@
 package br.com.ada.programacaowebIsb.model;
 
+import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "tb_veiculo")
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Veiculo {
@@ -19,7 +18,7 @@ public class Veiculo {
     @Column(unique = true)
     private String placa;
     private String marca;
-    
+
     private String modelo;
 
     private String tipo;
