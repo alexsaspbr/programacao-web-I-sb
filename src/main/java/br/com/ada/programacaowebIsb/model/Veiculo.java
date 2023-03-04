@@ -1,12 +1,12 @@
 package br.com.ada.programacaowebIsb.model;
 
-import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
 @Table(name = "tb_veiculo")
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

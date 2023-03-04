@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Veiculos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+<h1>Veiculos</h1>
+
+<div>
+    <nobr>
+        <a th:href="@{/veiculo/add}">Add Veiculo</a> |
+        <a th:href="@{/}">Voltar</a>
+    </nobr>
+</div>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Placa</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Tipo</th>
+            <th>Disponivel</th>
+        </tr>
+        <tr th:each ="veiculo : ${veiculos}">
+            <td><a th:href="@{/veiculo/{veiculoId}(veiculoId=${veiculo.id})}" th:utext="${veiculo.id}">...</a></td>
+            <td><a th:href="@{/veiculo/{veiculoId}(veiculoId=${veiculo.id})}" th:utext="${veiculo.placa}">...</a></td>
+            <td th:utext="${veiculo.marca}">...</td>
+            <td th:utext="${veiculo.modelo}">...</td>
+            <td th:utext="${veiculo.tipo}">...</td>
+            <td th:utext="${veiculo.disponivel}">...</td>
+            <td><a th:href="@{/veiculos/{veiculoId}/edit(veiculoId=${veiculo.id})}">Edit</a></td>
+        </tr>
+    </table>
+</div>
+<br/>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
