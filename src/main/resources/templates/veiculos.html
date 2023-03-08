@@ -16,7 +16,7 @@
 </div>
 <br/><br/>
 <div>
-    <table border="1">
+    <table class="table">
         <tr>
             <th>Id</th>
             <th>Placa</th>
@@ -26,13 +26,16 @@
             <th>Disponivel</th>
         </tr>
         <tr th:each ="veiculo : ${veiculos}">
-            <td><a th:href="@{/veiculo/{veiculoId}(veiculoId=${veiculo.id})}" th:utext="${veiculo.id}">...</a></td>
-            <td><a th:href="@{/veiculo/{veiculoId}(veiculoId=${veiculo.id})}" th:utext="${veiculo.placa}">...</a></td>
+            <td th:utext="${veiculo.id}">...</td>
+            <td th:utext="${veiculo.placa}">...</td>
             <td th:utext="${veiculo.marca}">...</td>
             <td th:utext="${veiculo.modelo}">...</td>
             <td th:utext="${veiculo.tipo}">...</td>
             <td th:utext="${veiculo.disponivel}">...</td>
-            <td><a th:href="@{/veiculos/{veiculoId}/edit(veiculoId=${veiculo.id})}">Edit</a></td>
+            <td>
+                <a class="btn btn-primary btn-sm" th:href="@{/veiculo/{veiculoId}/edit(veiculoId=${veiculo.id})}">Edit</a>
+                <a class="btn btn-danger btn-sm" th:href="@{/veiculo/{veiculoId}/delete(veiculoId=${veiculo.id})}">Delete</a>
+            </td>
         </tr>
     </table>
 </div>
